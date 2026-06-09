@@ -6,41 +6,74 @@
 }
 
 body {
-    background-color: #0b0f19; /* Deep cyber-black background */
-    background-image: radial-gradient(rgba(108, 36, 44, 0.25) 1px, transparent 0); /* Maroon tinted tech grid */
-    background-size: 24px 24px;
+    background-color: #0b0f19;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    position: relative;
+    overflow: hidden;
 }
 
+/* 🎨 Scattered Doodle System Layout 🎨 */
+.spidey-doodle-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.doodle {
+    position: absolute;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+}
+
+.hanging-spidey {
+    top: 0;
+    left: 10%;
+    animation: swing 4s ease-in-out infinite alternate;
+    transform-origin: top center;
+}
+
+.city-skyline {
+    bottom: -10px;
+    left: 2%;
+    opacity: 0.6;
+}
+
+.corner-web {
+    top: -20px;
+    right: -20px;
+}
+
+.crawling-spider {
+    bottom: 10%;
+    right: 5%;
+}
+
+/* Swing Animation for Hanging Chibi Spidey */
+@keyframes swing {
+    0% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}
+
+/* 📱 CALCULATOR PANEL CONTAINER 📱 */
 .calculator-container {
-    background: linear-gradient(145deg, #6c242c, #4a181e); /* Premium deep maroon suit body */
+    background: linear-gradient(145deg, #6c242c, #4a181e); /* Matte Burgundy / Maroon Case */
     width: 340px;
     padding: 32px 24px;
     border-radius: 36px;
-    box-shadow: 0 20px 45px rgba(108, 36, 44, 0.4); /* Matching maroon glow */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(108, 36, 44, 0.3);
     position: relative;
+    z-index: 10;
     border: 4px solid #11151e;
 }
 
-/* Badging elements */
-.spidey-badge {
-    position: absolute;
-    font-size: 2.8rem;
-    user-select: none;
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
-}
-
-.web-top { top: -20px; left: -10px; transform: rotate(-10deg); }
-.spider-bottom { bottom: -20px; right: -5px; }
-
-/* Interactive Helper Message Banner styling */
 .spidey-banner {
     background-color: #11151e;
-    color: #4da6ff; /* Neon web blue text line */
+    color: #4da6ff;
     font-family: 'Segoe UI', sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
@@ -51,13 +84,11 @@ body {
     border-radius: 12px;
     margin-bottom: 14px;
     border: 2px solid #202838;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* Significantly Vertically Enlarged Screen Display */
 .screen-panel {
-    background-color: #0d1117; /* Extra dark void viewport screen */
-    height: 130px; /* Highly extended height to make it much bigger */
+    background-color: #0d1117;
+    height: 130px;
     border-radius: 24px;
     margin-bottom: 24px;
     display: flex;
@@ -66,11 +97,10 @@ body {
     align-items: flex-end;
     padding: 16px 22px;
     border: 3px solid #1c2331;
-    box-shadow: inset 0 6px 12px rgba(0,0,0,0.5);
 }
 
 .history {
-    color: #6c242c; /* Maroon mathematical trace timeline tracking */
+    color: #6c242c;
     font-family: 'Segoe UI', sans-serif;
     font-size: 1rem;
     font-weight: 600;
@@ -79,12 +109,10 @@ body {
 
 .display {
     color: #ffffff;
-    font-size: 3rem; /* Huge impact numbers display font size */
+    font-size: 3rem;
     font-weight: bold;
-    letter-spacing: -1px;
 }
 
-/* Round Keypad Buttons Styling */
 .keypad-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -98,7 +126,7 @@ button {
     border-radius: 50%;
     font-size: 1.5rem;
     cursor: pointer;
-    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.15s ease;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,29 +135,28 @@ button {
 }
 
 button.num-btn {
-    background-color: #0052cc; /* Classic Deep Suit Blue keys */
+    background-color: #4569AD; /* Sailing Blue Keys */
     color: #ffffff;
 }
 
 button.op-btn {
-    background-color: #11151e; /* Sleek black mask accents for symbols */
+    background-color: #11151e;
     color: #ff4d4d;
 }
 
 button.clear-btn {
-    background-color: #ffffff; /* Bright white mask eye lenses theme color */
+    background-color: #ffffff;
     color: #6c242c;
 }
 
 button.equals-btn {
-    background-color: #ff4d4d; /* Bright action trigger key */
+    background-color: #ff4d4d;
     color: #ffffff;
 }
 
-/* Tactical Click Feedbacks */
 button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.35);
+    filter: brightness(1.1);
 }
 
 button:active {
