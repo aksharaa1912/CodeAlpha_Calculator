@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f0fa, #e8dff5); /* Soft premium lavender backdrop */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator-box {
+    background: rgba(255, 255, 255, 0.85); /* Smooth frosted-glass look */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 32px; /* Super smooth rounded corners */
+    padding: 28px;
+    width: 330px;
+    box-shadow: 0 20px 40px rgba(160, 132, 202, 0.15); /* Elegant soft shadow */
+}
+
+/* Screen Display Styles */
+.screen {
+    background-color: rgba(243, 232, 255, 0.6); /* Pastel translucent display panel */
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 20px;
+    border-radius: 24px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+}
+
+.history-track {
+    color: #b096d9;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.live-input {
+    color: #5b3e85; /* Deep muted premium purple */
+    font-size: 2.4rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+/* Buttons Grid Layout */
+.buttons-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px; /* Perfect spacing between aesthetic keys */
+}
+
+button {
+    border: none;
+    background-color: #ffffff; /* Clean white canvas for base buttons */
+    color: #7b5ca6; /* Pastel purple text */
+    font-size: 1.35rem;
+    font-weight: 500;
+    height: 62px;
+    border-radius: 20px; /* Pillow-soft round edges */
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); /* Premium silky fluid animation */
+    box-shadow: 0 4px 10px rgba(160, 132, 202, 0.06); /* Subtle depth shadow */
+}
+
+/* Aesthetic Interaction States */
+button:hover {
+    background-color: #fcfaff;
+    transform: translateY(-2px); /* Premium slight float effect on hover */
+    box-shadow: 0 6px 15px rgba(160, 132, 202, 0.12);
+}
+
+button:active {
+    transform: translateY(1px) scale(0.96); /* Soft tactile bounce click */
+    box-shadow: 0 2px 5px rgba(160, 132, 202, 0.05);
+}
+
+/* Special Functional Buttons Styling */
+button.operator {
+    background-color: #f3eafd; /* Subtle lavender-tint keys */
+    color: #9b6bd6;
+    font-weight: 600;
+}
+
+button.operator:hover {
+    background-color: #ede0fc;
+}
+
+button.clear {
+    background-color: #fff0f0; /* Soft blushing pink clear key */
+    color: #fa6b6b;
+}
+
+button.clear:hover {
+    background-color: #ffe5e5;
+}
+
+button.equals-key {
+    background: linear-gradient(135deg, #a78bfa, #8b5cf6); /* Soft gradient on equals button */
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 6px 16px rgba(139, 92, 246, 0.25);
+}
+
+button.equals-key:hover {
+    background: linear-gradient(135deg, #b9a2fc, #9a73f8);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.35);
+}

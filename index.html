@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesthetic CodeAlpha Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="calculator-box">
+        <!-- Translucent Screen Display -->
+        <div class="screen">
+            <div class="history-track" id="history"></div>
+            <div class="live-input" id="display">0</div>
+        </div>
+
+        <!-- Pillow-Soft Buttons Grid Layout -->
+        <div class="buttons-layout">
+            <button class="clear" onclick="clearAll()">C</button>
+            <button class="operator" onclick="inputOperator('/')">&divide;</button>
+            <button class="operator" onclick="inputOperator('*')">&times;</button>
+            <button class="operator" onclick="inputOperator('-')">&minus;</button>
+            
+            <button onclick="inputNumber('7')">7</button>
+            <button onclick="inputNumber('8')">8</button>
+            <button onclick="inputNumber('9')">9</button>
+            <button class="operator" onclick="inputOperator('+')">+</button>
+            
+            <button onclick="inputNumber('4')">4</button>
+            <button onclick="inputNumber('5')">5</button>
+            <button onclick="inputNumber('6')">6</button>
+            <button onclick="inputNumber('.')">.</button>
+            
+            <button onclick="inputNumber('1')">1</button>
+            <button onclick="inputNumber('2')">2</button>
+            <button onclick="inputNumber('3')">3</button>
+            
+            <!-- Beautiful Gradient Equals Button -->
+            <button class="equals-key" style="grid-row: span 2; height: 138px;" onclick="triggerResult()">=</button>
+            
+            <!-- Long Span Button for Zero -->
+            <button onclick="inputNumber('0')" style="grid-column: span 3;">0</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
