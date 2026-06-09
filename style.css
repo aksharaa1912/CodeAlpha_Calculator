@@ -2,116 +2,144 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #f5f0fa, #e8dff5); /* Soft premium lavender backdrop */
+    background: linear-gradient(135deg, #f0e6ff, #e3d5ff);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+}
+
+/* Flex layout workspace grid wrapper */
+.app-workspace {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .calculator-box {
-    background: rgba(255, 255, 255, 0.85); /* Smooth frosted-glass look */
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 32px; /* Super smooth rounded corners */
-    padding: 28px;
-    width: 330px;
-    box-shadow: 0 20px 40px rgba(160, 132, 202, 0.15); /* Elegant soft shadow */
+    background: #ffffff;
+    border-radius: 36px;
+    padding: 26px;
+    width: 340px;
+    box-shadow: 0 20px 40px rgba(147, 51, 234, 0.1);
 }
 
-/* Screen Display Styles */
 .screen {
-    background-color: rgba(243, 232, 255, 0.6); /* Pastel translucent display panel */
+    background-color: #f7f2ff;
     min-height: 110px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
     padding: 20px;
-    border-radius: 24px;
+    border-radius: 28px;
     margin-bottom: 24px;
     overflow-x: auto;
 }
 
 .history-track {
-    color: #b096d9;
+    color: #b39ddb;
     font-size: 0.95rem;
-    font-weight: 500;
     margin-bottom: 6px;
-    letter-spacing: 0.5px;
 }
 
 .live-input {
-    color: #5b3e85; /* Deep muted premium purple */
-    font-size: 2.4rem;
-    font-weight: 600;
-    letter-spacing: -0.5px;
+    color: #4a148c;
+    font-size: 2.5rem;
+    font-weight: 700;
 }
 
-/* Buttons Grid Layout */
 .buttons-layout {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 14px; /* Perfect spacing between aesthetic keys */
+    gap: 14px;
 }
 
+/* Cute candy-circle buttons definition */
 button {
     border: none;
-    background-color: #ffffff; /* Clean white canvas for base buttons */
-    color: #7b5ca6; /* Pastel purple text */
-    font-size: 1.35rem;
-    font-weight: 500;
-    height: 62px;
-    border-radius: 20px; /* Pillow-soft round edges */
+    background-color: #faf7ff;
+    color: #7c4dff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    height: 64px;
+    width: 64px;
+    border-radius: 50%; /* Perfect sweet circles */
     cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); /* Premium silky fluid animation */
-    box-shadow: 0 4px 10px rgba(160, 132, 202, 0.06); /* Subtle depth shadow */
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 8px rgba(147, 51, 234, 0.04);
 }
 
-/* Aesthetic Interaction States */
 button:hover {
-    background-color: #fcfaff;
-    transform: translateY(-2px); /* Premium slight float effect on hover */
-    box-shadow: 0 6px 15px rgba(160, 132, 202, 0.12);
+    background-color: #f1ecff;
+    transform: scale(1.08); /* Cute pop out bounce */
 }
 
 button:active {
-    transform: translateY(1px) scale(0.96); /* Soft tactile bounce click */
-    box-shadow: 0 2px 5px rgba(160, 132, 202, 0.05);
+    transform: scale(0.92);
 }
 
-/* Special Functional Buttons Styling */
 button.operator {
-    background-color: #f3eafd; /* Subtle lavender-tint keys */
-    color: #9b6bd6;
-    font-weight: 600;
-}
-
-button.operator:hover {
-    background-color: #ede0fc;
+    background-color: #f3e8ff;
+    color: #9c27b0;
 }
 
 button.clear {
-    background-color: #fff0f0; /* Soft blushing pink clear key */
-    color: #fa6b6b;
-}
-
-button.clear:hover {
-    background-color: #ffe5e5;
+    background-color: #ffebee;
+    color: #ef5350;
 }
 
 button.equals-key {
-    background: linear-gradient(135deg, #a78bfa, #8b5cf6); /* Soft gradient on equals button */
+    background: linear-gradient(135deg, #b388ff, #7c4dff);
     color: #ffffff;
-    font-weight: 600;
-    box-shadow: 0 6px 16px rgba(139, 92, 246, 0.25);
+    border-radius: 28px;
+    width: 64px;
+    box-shadow: 0 6px 14px rgba(124, 77, 255, 0.3);
 }
 
-button.equals-key:hover {
-    background: linear-gradient(135deg, #b9a2fc, #9a73f8);
-    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.35);
+/* Scratchpad canvas UI box styles */
+.scratchpad-box {
+    background: #ffffff;
+    border-radius: 36px;
+    padding: 24px;
+    width: 340px;
+    box-shadow: 0 20px 40px rgba(147, 51, 234, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.pad-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.pad-header h3 {
+    color: #4a148c;
+    font-size: 1.1rem;
+}
+
+.clear-pad-btn {
+    width: auto;
+    height: auto;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    border-radius: 12px;
+    background-color: #f5f5f5;
+    color: #666;
+}
+
+#doodleCanvas {
+    background-color: #faf8ff;
+    border: 2px dashed #e1d5f5;
+    border-radius: 24px;
+    cursor: crosshair;
+    touch-action: none;
 }
