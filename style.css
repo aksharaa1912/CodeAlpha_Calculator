@@ -2,124 +2,136 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Comic Sans MS', 'Segoe UI', cursive, sans-serif;
+    font-family: 'Impact', 'Segoe UI', system-ui, sans-serif;
 }
 
 body {
-    background-color: #f2ebd9; /* Matte cream backdrop exactly like image */
+    background-color: #0b0f19; /* Deep cyber-black background */
+    background-image: radial-gradient(rgba(224, 36, 36, 0.15) 1px, transparent 0); /* Subtle grid feel */
+    background-size: 24px 24px;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .calculator-container {
-    background-color: #dcd3f2; /* Soft pastel lavender body */
-    width: 320px;
-    padding: 30px 24px;
-    border-radius: 40px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
-    position: relative; /* Needed for positioning bow and flowers */
-    border: 4px solid #ffffff;
+    background: linear-gradient(145deg, #e61a1a, #cc0000); /* High-gloss Spiderman Red Suit Body */
+    width: 340px;
+    padding: 32px 24px;
+    border-radius: 36px;
+    box-shadow: 0 20px 45px rgba(230, 26, 26, 0.3);
+    position: relative;
+    border: 4px solid #11151e;
 }
 
-/* Floating Decorative Elements */
-.cute-bow {
+/* Badge Badging elements */
+.spidey-badge {
     position: absolute;
-    top: -15px;
-    left: -15px;
-    font-size: 3rem;
-    transform: rotate(-15deg);
+    font-size: 2.8rem;
     user-select: none;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
 }
 
-.cute-flowers {
-    position: absolute;
-    bottom: -15px;
-    right: -10px;
-    font-size: 2.2rem;
-    user-select: none;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+.web-top { top: -20px; left: -10px; transform: rotate(-10deg); }
+.spider-bottom { bottom: -20px; right: -5px; }
+
+/* Interactive Helper Message Banner styling */
+.spidey-banner {
+    background-color: #11151e;
+    color: #4da6ff; /* Neon web blue text line */
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 8px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    border: 2px solid #202838;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* Display Screen Panel */
+/* Significantly Vertically Enlarged Screen Display */
 .screen-panel {
-    background-color: #4a5759; /* Soft dark slate display */
-    height: 85px;
-    border-radius: 20px;
-    margin-bottom: 28px;
+    background-color: #0d1117; /* Extra dark void viewport screen */
+    height: 130px; /* Highly extended height to make it much bigger */
+    border-radius: 24px;
+    margin-bottom: 24px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    padding: 12px 20px;
-    border: 3px solid #ffffff;
-    box-shadow: inset 0 4px 8px rgba(0,0,0,0.2);
+    padding: 16px 22px;
+    border: 3px solid #1c2331;
+    box-shadow: inset 0 6px 12px rgba(0,0,0,0.5);
 }
 
 .history {
-    color: #9cb2ce;
-    font-size: 0.9rem;
-    margin-bottom: 2px;
+    color: #ef4444; /* Red mathematical trace timeline tracking */
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
 }
 
 .display {
     color: #ffffff;
-    font-size: 2.2rem;
+    font-size: 3rem; /* Huge impact numbers display font size */
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: -1px;
 }
 
-/* Keypad Layout */
+/* Round Keypad Buttons Styling */
 .keypad-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 14px;
 }
 
-/* Custom Circle Buttons Styling */
 button {
     border: none;
-    height: 56px;
-    width: 56px;
-    border-radius: 50%; /* Perfect circles like image */
-    font-size: 1.3rem;
-    font-weight: bold;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    font-size: 1.5rem;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #ffffff;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    border: 2px solid #11151e;
 }
 
-/* Button Color Customization matching image palette */
 button.num-btn {
-    background-color: #9cb2ce; /* Dusty slate blue keys */
+    background-color: #0052cc; /* Classic Deep Suit Blue keys */
     color: #ffffff;
 }
 
 button.op-btn {
-    background-color: #5c6b73; /* Darker grey contrast for operators */
-    color: #ffffff;
+    background-color: #11151e; /* Sleek black mask accents for symbols */
+    color: #ff3333;
 }
 
 button.clear-btn {
-    background-color: #f7a0a0; /* Soft pastel red for Clear */
-    color: #ffffff;
+    background-color: #ffffff; /* Bright white mask eye lenses theme color */
+    color: #cc0000;
 }
 
 button.equals-btn {
-    background-color: #4a5759; /* Deep slate for equals to match screen */
+    background-color: #ff3333; /* Neon glowing red fire action trigger key */
     color: #ffffff;
 }
 
-/* Aesthetic Bouncy Clicks */
+/* Tactical Click Feedbacks */
 button:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.35);
 }
 
 button:active {
-    transform: translateY(1px) scale(0.95);
+    transform: translateY(1px) scale(0.94);
 }
