@@ -7,7 +7,7 @@
 
 body {
     background-color: #0b0f19; /* Deep cyber-black background */
-    background-image: radial-gradient(rgba(224, 36, 36, 0.15) 1px, transparent 0); /* Subtle grid feel */
+    background-image: radial-gradient(rgba(108, 36, 44, 0.25) 1px, transparent 0); /* Maroon tinted tech grid */
     background-size: 24px 24px;
     min-height: 100vh;
     display: flex;
@@ -17,16 +17,16 @@ body {
 }
 
 .calculator-container {
-    background: linear-gradient(145deg, #e61a1a, #cc0000); /* High-gloss Spiderman Red Suit Body */
+    background: linear-gradient(145deg, #6c242c, #4a181e); /* Premium deep maroon suit body */
     width: 340px;
     padding: 32px 24px;
     border-radius: 36px;
-    box-shadow: 0 20px 45px rgba(230, 26, 26, 0.3);
+    box-shadow: 0 20px 45px rgba(108, 36, 44, 0.4); /* Matching maroon glow */
     position: relative;
     border: 4px solid #11151e;
 }
 
-/* Badge Badging elements */
+/* Badging elements */
 .spidey-badge {
     position: absolute;
     font-size: 2.8rem;
@@ -70,7 +70,7 @@ body {
 }
 
 .history {
-    color: #ef4444; /* Red mathematical trace timeline tracking */
+    color: #6c242c; /* Maroon mathematical trace timeline tracking */
     font-family: 'Segoe UI', sans-serif;
     font-size: 1rem;
     font-weight: 600;
@@ -113,16 +113,16 @@ button.num-btn {
 
 button.op-btn {
     background-color: #11151e; /* Sleek black mask accents for symbols */
-    color: #ff3333;
+    color: #ff4d4d;
 }
 
 button.clear-btn {
     background-color: #ffffff; /* Bright white mask eye lenses theme color */
-    color: #cc0000;
+    color: #6c242c;
 }
 
 button.equals-btn {
-    background-color: #ff3333; /* Neon glowing red fire action trigger key */
+    background-color: #ff4d4d; /* Bright action trigger key */
     color: #ffffff;
 }
 

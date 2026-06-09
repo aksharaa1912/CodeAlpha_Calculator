@@ -5,7 +5,7 @@ const bannerMessage = document.getElementById('banner-message');
 let currentInput = '0';
 let calculationDone = false;
 
-// Array of random cute/funny Spidey phrases for calculations
+// Spidey phrases for calculations
 const spideyPhrases = [
     "Boom! Your answer is here!",
     "Spidey-Sense calculated it perfectly!",
@@ -60,8 +60,6 @@ function triggerResult() {
             bannerMessage.innerText = "Web broke! Try another formula.";
         } else {
             currentInput = Number(result.toFixed(8)).toString();
-            
-            // Pick a random cool spidey phrase to show above the screen!
             const randomPhrase = spideyPhrases[Math.floor(Math.random() * spideyPhrases.length)];
             bannerMessage.innerText = randomPhrase;
         }
@@ -72,3 +70,27 @@ function triggerResult() {
     display.innerText = currentInput;
     calculationDone = true;
 }
+
+// 🎯 THE BONUS KEYBOARD SUPPORT LOGIC:
+window.addEventListener('keydown', (e) => {
+    if ((e.key >= '0' && e.key <= '9') || e.key === '.') {
+        inputNumber(e.key);
+    } else if (['+', '-', '*', '/'].includes(e.key)) {
+        inputOperator(e.key);
+    } else if (e.key === 'Enter' || e.key === '=') {
+        e.preventDefault(); // Prevents page from jumping
+        triggerResult();
+    } else if (e.key === 'Escape' || e.key === 'c' || e.key === 'C') {
+        clearAll();
+    } else if (e.key === 'Backspace') {
+        if (calculationDone || currentInput === 'Error') {
+            clearAll();
+        } else if (currentInput.length > 1) {
+            currentInput = currentInput.slice(0, -1);
+            display.innerText = currentInput;
+        } else {
+            currentInput = '0';
+            display.innerText = '0';
+        }
+    }
+});
