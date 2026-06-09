@@ -2,144 +2,124 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-family: 'Comic Sans MS', 'Segoe UI', cursive, sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #f0e6ff, #e3d5ff);
+    background-color: #f2ebd9; /* Matte cream backdrop exactly like image */
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
 }
 
-/* Flex layout workspace grid wrapper */
-.app-workspace {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
+.calculator-container {
+    background-color: #dcd3f2; /* Soft pastel lavender body */
+    width: 320px;
+    padding: 30px 24px;
+    border-radius: 40px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+    position: relative; /* Needed for positioning bow and flowers */
+    border: 4px solid #ffffff;
 }
 
-.calculator-box {
-    background: #ffffff;
-    border-radius: 36px;
-    padding: 26px;
-    width: 340px;
-    box-shadow: 0 20px 40px rgba(147, 51, 234, 0.1);
+/* Floating Decorative Elements */
+.cute-bow {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    font-size: 3rem;
+    transform: rotate(-15deg);
+    user-select: none;
 }
 
-.screen {
-    background-color: #f7f2ff;
-    min-height: 110px;
+.cute-flowers {
+    position: absolute;
+    bottom: -15px;
+    right: -10px;
+    font-size: 2.2rem;
+    user-select: none;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+}
+
+/* Display Screen Panel */
+.screen-panel {
+    background-color: #4a5759; /* Soft dark slate display */
+    height: 85px;
+    border-radius: 20px;
+    margin-bottom: 28px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    padding: 20px;
-    border-radius: 28px;
-    margin-bottom: 24px;
-    overflow-x: auto;
+    padding: 12px 20px;
+    border: 3px solid #ffffff;
+    box-shadow: inset 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.history-track {
-    color: #b39ddb;
-    font-size: 0.95rem;
-    margin-bottom: 6px;
+.history {
+    color: #9cb2ce;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
 }
 
-.live-input {
-    color: #4a148c;
-    font-size: 2.5rem;
-    font-weight: 700;
+.display {
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
-.buttons-layout {
+/* Keypad Layout */
+.keypad-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 14px;
 }
 
-/* Cute candy-circle buttons definition */
+/* Custom Circle Buttons Styling */
 button {
     border: none;
-    background-color: #faf7ff;
-    color: #7c4dff;
-    font-size: 1.4rem;
-    font-weight: 600;
-    height: 64px;
-    width: 64px;
-    border-radius: 50%; /* Perfect sweet circles */
+    height: 56px;
+    width: 56px;
+    border-radius: 50%; /* Perfect circles like image */
+    font-size: 1.3rem;
+    font-weight: bold;
     cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 4px 8px rgba(147, 51, 234, 0.04);
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ffffff;
 }
 
+/* Button Color Customization matching image palette */
+button.num-btn {
+    background-color: #9cb2ce; /* Dusty slate blue keys */
+    color: #ffffff;
+}
+
+button.op-btn {
+    background-color: #5c6b73; /* Darker grey contrast for operators */
+    color: #ffffff;
+}
+
+button.clear-btn {
+    background-color: #f7a0a0; /* Soft pastel red for Clear */
+    color: #ffffff;
+}
+
+button.equals-btn {
+    background-color: #4a5759; /* Deep slate for equals to match screen */
+    color: #ffffff;
+}
+
+/* Aesthetic Bouncy Clicks */
 button:hover {
-    background-color: #f1ecff;
-    transform: scale(1.08); /* Cute pop out bounce */
+    transform: translateY(-2px);
+    filter: brightness(1.05);
 }
 
 button:active {
-    transform: scale(0.92);
-}
-
-button.operator {
-    background-color: #f3e8ff;
-    color: #9c27b0;
-}
-
-button.clear {
-    background-color: #ffebee;
-    color: #ef5350;
-}
-
-button.equals-key {
-    background: linear-gradient(135deg, #b388ff, #7c4dff);
-    color: #ffffff;
-    border-radius: 28px;
-    width: 64px;
-    box-shadow: 0 6px 14px rgba(124, 77, 255, 0.3);
-}
-
-/* Scratchpad canvas UI box styles */
-.scratchpad-box {
-    background: #ffffff;
-    border-radius: 36px;
-    padding: 24px;
-    width: 340px;
-    box-shadow: 0 20px 40px rgba(147, 51, 234, 0.1);
-    display: flex;
-    flex-direction: column;
-}
-
-.pad-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-}
-
-.pad-header h3 {
-    color: #4a148c;
-    font-size: 1.1rem;
-}
-
-.clear-pad-btn {
-    width: auto;
-    height: auto;
-    padding: 6px 14px;
-    font-size: 0.85rem;
-    border-radius: 12px;
-    background-color: #f5f5f5;
-    color: #666;
-}
-
-#doodleCanvas {
-    background-color: #faf8ff;
-    border: 2px dashed #e1d5f5;
-    border-radius: 24px;
-    cursor: crosshair;
-    touch-action: none;
+    transform: translateY(1px) scale(0.95);
 }
